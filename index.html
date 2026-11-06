@@ -5,7 +5,7 @@
   <title>Nidhi &amp; Jay | Wedding Invitation</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;family=Noto+Serif+Gujarati:wght@400;600&amp;display=swap" rel="stylesheet">
   <style>
-    :root{--paper:#fffaf0;--ink:#483a33;--red:#aa544b;--line:#dec9a9;--teal:#285c58}
+    :root{--paper:#fffaf0;--ink:#483a33;--red:#aa544b;--line:#dec9a9;--teal:#285c58;--line2:#918e83;}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:85px}
     body{margin:0;width:100%;color:var(--ink);font-family:"DM Sans",sans-serif}
@@ -19,6 +19,7 @@
     .invitation-shell:before,.invitation-shell:after{content:"";position:absolute;top:8%;bottom:8%;width:1px;background:linear-gradient(transparent,#e7d5b94d,transparent);pointer-events:none}
     .invitation-shell:before{left:0}.invitation-shell:after{right:0}
     .fine-rule{height:1px;background:var(--line);max-width:470px;margin:0 auto}
+    .fine-rule2{height:2px;background:var(--line2);width:250px;margin:0 auto}
     .function-names{font-size: 25px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal; margin-top:10px;}
     .event-card{border:1px solid #e8d8c3;background:#fffdf8;box-shadow:0 12px 35px #88654e0b}
     .event-card:before{display:block;color:#bd8171;font-size:17px;margin-bottom:14px}
@@ -27,6 +28,8 @@
     a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #b36a55;outline-offset:3px}
     @media(max-width:640px){.invitation-shell:before,.invitation-shell:after{display:none}.petal{opacity:.35}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.petal-layer{display:none}}
+    @font-face{font-family:'Halimun';src:url('/Users/nidhidilesh/Downloads/images/font/halimun/halimun.ttf') format('woff2');font-display:swap;font-style:normal;font-weight:400}
+.script-names{font-family:'Halimun',cursive;font-size:clamp(56px,12vw,10px);text-shadow:0 2px #fff9,0 5px 18px #bd965b30}
     /* Base Button Styling */
 .volume-btn {
   position: fixed;
@@ -187,8 +190,8 @@
    </nav>
   </header>
   <main class="w-full">
-    <img src="bg.jpeg" style="position:absolute;z-index: -998; opacity: 30%; width: 100%; height: 140%; "/>
-   <section id="home" data-template-id="hero-section" class="canva-section w-full px-5 pt-12 pb-16 sm:pt-16 sm:pb-24 text-center" style="background: rgb(255, 250, 240); z-index: -999;">
+    <img src="bg.png" style="position:absolute;z-index: -998; opacity: 1; width: 100%; height: 140%; "/>
+   <section id="home" data-template-id="hero-section" class="canva-section w-full px-5 pt-12 pb-16 sm:pt-16 sm:pb-24 text-center" style="background: rgb(255, 250, 240); z-index: -999; opacity: 1;">
     
     <div id="invitation" class="invitation-shell max-w-3xl mx-auto px-2 sm:px-14" style="padding-top: 40px;">
      <!-- <svg class="mx-auto mb-5 w-28 h-32 sm:w-36 sm:h-40 text-[#b2634e]" viewBox="0 0 160 180" fill="none" role="img" aria-label="Graceful line illustration of Lord Ganesha">
@@ -202,19 +205,22 @@
       </g>
      </svg> -->
      
-     <img class="ganesh hero-reveal" src="ganesha.png" style="accent-color:#aa544b; align-items: center;"/>
-     <p data-template-id="invocation" class="canva-text gujarati mb-3 hero-reveal" style="font-size: 19px; color: rgb(128, 83, 66); font-weight: 400; font-style: normal;">|| શ્રી ગણેશાય નમઃ ||</p>
-     <p data-template-id="elders-blessing" class="canva-text serif italic mb-8 hero-reveal" style="font-size: 17px; color: rgb(174, 101, 84); font-weight: 400; font-style: italic;">With the blessings of our elders</p>
-     <p data-template-id="bride-parents-invitation" class="canva-text serif leading-relaxed hero-reveal" style="font-size: 18px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Mrs. Jagruti Duarcadas and Mr. Dilesh Solanki</p>
+     <img class="ganesh hero-reveal" src="ganesha.png" style="accent-color:#ff1e05; align-items: center;z-index: -999;"/>
+     <p data-template-id="invocation" class="canva-text gujarati mb-3 mb-8 hero-reveal" style="font-size: 19px; color: rgb(189, 33, 33); font-weight: 400; font-style: normal;">|| શ્રી ગણેશાય નમઃ ||</p>
+     <p data-template-id="elders-blessing" class="canva-text serif italic hero-reveal" style="font-size: 16px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">With the blessings of our elders</p>
+     <p data-template-id="bride-parents-invitation" class="canva-text serif mt-3 leading-relaxed hero-reveal" style="font-size: 18px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;"><strong>Mrs. Jagruti Duarcadas</strong> and <strong>Mr. Dilesh Manilal</strong></p>
      <p data-template-id="invitation-request" class="canva-text serif leading-relaxed mt-3 hero-reveal" style="font-size: 16px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">cordially invite you to celebrate the wedding ceremony of their Daughter</p>
-     <h1 data-template-id="bride-name" class="canva-text serif italic mt-8 hero-reveal" style="font-size: 58px; font-weight: 500; color: rgb(139, 57, 57); font-style: italic;">Nidhi</h1>
-     <p data-template-id="with-word" class="canva-text serif mt-3 mb-1 hero-reveal" style="font-size: 17px; color: rgb(149, 121, 106); font-weight: 400; font-style: normal;">With</p>
-     <p data-template-id="groom-name" class="canva-text serif italic hero-reveal" style="font-size: 58px; font-weight: 500; color: rgb(139, 57, 57); font-style: italic;">Jay</p>
-     <p data-template-id="son-of" class="canva-text serif mt-7 mb-3 hero-reveal" style="font-size: 16px; color: rgb(121, 88, 78); font-weight: 400; font-style: normal;">Son of</p>
-     <p data-template-id="groom-parents-invitation" class="canva-text serif leading-relaxed hero-reveal" style="font-size: 18px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Mrs. Aarti Mehta and Mr. Deepak Mehta</p>
-     <p data-template-id="invitation-blessing" class="canva-text serif leading-relaxed max-w-xl mx-auto mt-8 hero-reveal" style="font-size: 17px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">May your presence and blessings make these moments even more beautiful.</p>
-     <div class="fine-rule mt-9 mb-4"></div>
-     <p data-template-id="with-love" class="canva-text serif italic mt-8 hero-reveal" style="font-size: 17px; color: rgb(166, 85, 75); font-weight: 400; font-style: italic;">With love,</p>
+     <h1 data-template-id="bride-name" class="canva-text serif mt-8 hero-reveal script-names" style="font-size: 58px; font-weight: 500; color: rgb(139, 57, 57);">Nidhi</h1>
+     <p data-template-id="with-word" class="canva-text serif hero-reveal" style="font-size: 17px; color: rgb(149, 121, 106); font-weight: 400; font-style: normal;">With</p>
+     <p data-template-id="groom-name" class="canva-text serif mt-8 hero-reveal script-names" style="font-size: 58px; font-weight: 500; color: rgb(139, 57, 57);">Jay</p>
+     <p data-template-id="son-of" class="canva-text serif mt-8 mb-3 hero-reveal" style="font-size: 16px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Son of</p>
+     <p data-template-id="groom-parents-invitation" class="canva-text serif leading-relaxed hero-reveal" style="font-size: 18px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;"><strong>Mrs. Aarti Mehta</strong> and <strong>Mr. Deepak Mehta</strong></p><div class="fine-rule mt-9 mb-4"></div>
+     <p data-template-id="wedding-date" class="canva-text uppercase tracking-[.22em] hero-reveal" style="font-size: 12px; font-weight: 700; color: rgb(40, 92, 88); font-style: normal;">On 2nd February 2027 | Tuesday | 4:30pm</p>
+     <div class="fine-rule mt-4 mb-5"></div>
+     <p data-template-id="wedding-venue" class="canva-text serif italic hero-reveal" style="font-size: 22px; color: rgb(166, 85, 75); font-weight: 400; font-style: italic;">At Azzaro Resorts and Spa</p>
+     <p data-template-id="wedding-location" class="canva-text mt-2 uppercase hero-reveal" style="font-size: 15px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Diu</p>
+     <div class="fine-rule mt-5 mb-4"></div>
+     <p data-template-id="with-love" class="canva-text serif italic mt-5 hero-reveal" style="font-size: 17px; color: rgb(166, 85, 75); font-weight: 400; font-style: italic;">With love,</p>
      <p data-template-id="closing-names" class="canva-text serif mt-2 hero-reveal" style="font-size: 17px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Sneha &amp; Krisha</p>
     </div>
    </section>
@@ -232,20 +238,21 @@
         <article data-template-id="mama-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(233, 212, 241);">
            <img src="mosadu.png" class="rounded-2xl">
          <h4 data-template-id="mama-name" class="canva-text serif mb-3 function-names">Mama nu mosadu</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="mama-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">31 January 2027 | 10:00 am</p>
-         <!-- <p data-template-id="mama-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">10:00 am</p> -->
-         <p data-template-id="mama-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Our residence | Vekaria Road, Diu</p>
-         <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by lunch</p> 
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="mama-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Our residence | Vekaria Road, Diu</p>
         </article>
        </div>
        <div class="ceremony-flip">
         <article data-template-id="mehendi-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(204, 214, 200);">
           <img src="mehendi.png" class="rounded-2xl">
          <h4 data-template-id="mehendi-name" class="canva-text serif mb-3 function-names">Mehendi</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="mehendi-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">31 January 2027 | 7:00 pm</p>
-         <!-- <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">7:00 pm</p> -->
-         <p data-template-id="mehendi-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Our residence | Vekaria Road, Diu</p>
-         <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by dinner</p> 
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="mehendi-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Our residence | Vekaria Road, Diu</p>
+         <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by snacks</p> 
         </article>
        </div>
       </div>
@@ -256,11 +263,12 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
        <div class="ceremony-flip">
         <article data-template-id="vevishal-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(232, 182, 176);">
-          <img src="vevishal.png" class="rounded-2xl" width="313.66px">
+          <img src="vevishal.png" class="rounded-2xl">
          <h4 data-template-id="vevishal-name" class="canva-text serif mb-3 function-names">Vevishal</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="vevishal-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">1 February 2027 | 11:00 am</p>
-         <!-- <p data-template-id="vevishal-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">11:00 am</p> -->
-         <p data-template-id="vevishal-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Hotel Hemal Gardens, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="vevishal-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Hotel Hemal Gardens, Diu</p>
          <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by lunch</p> 
         </article>
        </div>
@@ -268,18 +276,20 @@
         <article data-template-id="mandap-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(255, 212, 244);">
           <img src="mandva.png" class="rounded-2xl">
          <h4 data-template-id="mandap-name" class="canva-text serif mb-3 function-names">Mandap Muhurat</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="mandap-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">1 February 2027 | 3:00 pm</p>
-         <!-- <p data-template-id="mandap-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">3:00 pm</p> -->
-         <p data-template-id="mandap-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Our residence | Vekaria Road, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="mandap-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Our residence | Vekaria Road, Diu</p>
         </article>
        </div>
        <div class="ceremony-flip">
         <article data-template-id="sangeet-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(195, 205, 255);">
           <img src="sangeet.png" class="rounded-2xl">
          <h4 data-template-id="sangeet-name" class="canva-text serif mb-3 function-names">Sangeet</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="sangeet-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">1 February 2027 | 7:00 pm</p>
-         <!-- <p data-template-id="sangeet-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">7:00 pm</p> -->
-         <p data-template-id="sangeet-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Hotel Hemal Gardens, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="sangeet-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Hotel Hemal Gardens, Diu</p>
          <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by dinner</p> 
         </article>
        </div>
@@ -293,27 +303,30 @@
         <article data-template-id="haldi-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(250, 229, 167);">
           <img src="haldi.png" class="rounded-2xl">
          <h4 data-template-id="haldi-name" class="canva-text serif mb-3 function-names">Pithi</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="haldi-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">2 February 2027 | 10:00 am</p>
-         <!-- <p data-template-id="haldi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">10:00 am</p> -->
-         <p data-template-id="haldi-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Our residence | Vekaria Road, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="haldi-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Our residence | Vekaria Road, Diu</p>
         </article>
        </div>
        <div class="ceremony-flip">
         <article data-template-id="hastmelap-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(255, 144, 144);">
           <img src="hastmelap.png" class="rounded-2xl">
          <h4 data-template-id="hastmelap-name" class="canva-text serif mb-3 function-names">Hastmelap</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="hastmelap-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">2 February 2027 | 4:30 pm</p>
-         <!-- <p data-template-id="hastmelap-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">4:30 pm</p> -->
-         <p data-template-id="hastmelap-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Azzaro Resorts and Spa, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="hastmelap-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Azzaro Resorts and Spa, Diu</p>
         </article>
        </div>
        <div class="ceremony-flip">
         <article data-template-id="reception-card" class="canva-card event-card rounded-2xl p-7 text-center" style="background: rgb(255, 206, 189);">
           <img src="wedding.png" class="rounded-2xl">
          <h4 data-template-id="reception-name" class="canva-text serif mb-3 function-names">Reception</h4>
+         <div class="fine-rule2 mt-4 mb-4"></div>
          <p data-template-id="reception-date" class="canva-text font-semibold" style="font-size: 14px; color: rgb(128, 80, 66); font-weight: 600; font-style: normal;">2 February 2027 | 7:00 pm</p>
-         <!-- <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">7:00 pm</p> -->
-         <p data-template-id="reception-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Azzaro Resorts and Spa, Diu</p>
+         <p data-template-id="mehendi-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">At</p>
+         <p data-template-id="reception-details" class="canva-text mt-2" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal; font-weight: bold;">Azzaro Resorts and Spa, Diu</p>
          <p data-template-id="reception-time" class="canva-text mt-1" style="font-size: 14px; color: rgb(104, 76, 67); font-weight: 400; font-style: normal;">Followed by dinner</p> 
         </article>
        </div>
@@ -365,7 +378,7 @@
 <script>
   const volumeBtn = document.getElementById('volume-toggle');
 const music = document.getElementById('bg-music');
-
+volumeBtn.classList.add('muted');
 volumeBtn.addEventListener('click', () => {
   if (music.paused) {
     music.play();
@@ -435,65 +448,62 @@ volumeBtn.addEventListener('click', () => {
           if (card.getBoundingClientRect().top > window.innerHeight) card.classList.add('flip-ready');
         });
       }
-      const form = document.getElementById('rsvp-form');
-      const name = document.getElementById('guest-name');
-      const count = document.getElementById('guest-count');
-      const button = document.getElementById('submit-rsvp');
-      const status = document.getElementById('rsvp-status');
-      let ready = false;
-      let busy = false;
-      function message(text, error = false) {
-        status.textContent = text;
-        status.style.color = error ? '#a12b30' : '#246145';
-      }
-      form.addEventListener('submit', async event => {
-        event.preventDefault();
-        if (busy) return;
-        const guestName = name.value.trim();
-        const rawCount = count.value.trim();
-        const partySize = Number(rawCount);
-        if (!guestName) {
-          message('Please enter your name.', true);
-          name.focus();
-          return;
-        }
-        if (!rawCount || !Number.isInteger(partySize) || partySize < 1 || partySize > 20) {
-          message('Enter a whole number from 1 to 20, including yourself.', true);
-          count.focus();
-          return;
-        }
-        if (!ready) {
-          message('RSVP is temporarily unavailable. Please try again shortly.', true);
-          return;
-        }
-        busy = true;
-        button.disabled = true;
-        message('Sending your RSVP…');
-        try {
-          const result = await window.dataSdk.create({
-            guest_name: guestName,
-            number_of_guests: partySize,
-            submitted_at: new Date().toISOString()
-          });
-          if (!result.isOk) throw result.error;
-          form.reset();
-          message('Thank you! Your RSVP has been received.');
-        } catch (_) {
-          message('Your RSVP could not be sent. Please try again.', true);
-        } finally {
-          busy = false;
-          button.disabled = false;
-        }
-      });
-      (async () => {
-        try {
-          const result = await window.dataSdk.init({ onDataChanged() {} });
-          ready = result.isOk;
-          if (!ready) message('RSVP is temporarily unavailable. Please try again shortly.', true);
-        } catch (_) {
-          message('RSVP is temporarily unavailable. Please try again shortly.', true);
-        }
-      })();
+      
+const form = document.getElementById('rsvp-form');
+const name = document.getElementById('guest-name');
+const count = document.getElementById('guest-count');
+const button = document.getElementById('submit-rsvp');
+const status = document.getElementById('rsvp-status');
+
+// Paste your deployed Google Apps Script URL here
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxG1-ldSiLT3qjehogHf2h2FiXYuRa22RfHKbpqWl7eaA5_OBcFgH1yjApFbTsXzELQ/exec';
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const guestName = name.value.trim();
+  const rawCount = count.value.trim();
+  const partySize = Number(rawCount);
+
+  if (!guestName) {
+    status.textContent = 'Please enter your name.';
+    return;
+  }
+
+  if (!rawCount || !Number.isInteger(partySize) ||
+      partySize < 1 || partySize > 20) {
+    status.textContent = 'Please enter a valid number of guests.';
+    return;
+  }
+
+  button.disabled = true;
+  status.textContent = 'Sending your RSVP...';
+
+  try {
+    await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({
+        guest_name: guestName,
+        number_of_guests: partySize,
+        submitted_at: new Date().toISOString()
+      })
+    });
+
+    form.reset();
+    status.textContent = 'Thank you! Your RSVP has been received.';
+
+  } catch (error) {
+    status.textContent =
+      'Your RSVP could not be sent. Please try again.';
+  } finally {
+    button.disabled = false;
+  }
+});
+
     })();
   </script>
  
