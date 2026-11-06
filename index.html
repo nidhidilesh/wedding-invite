@@ -380,7 +380,8 @@
 <script>
   const volumeBtn = document.getElementById('volume-toggle');
 const music = document.getElementById('bg-music');
-volumeBtn.classList.add('muted');
+const isSafari = /Safari/i.test(navigator.userAgent) && !/Chrome|CriOS|Android/i.test(navigator.userAgent);
+volumeBtn.classList.toggle('muted', !isSafari);
 volumeBtn.addEventListener('click', () => {
   if (music.paused) {
     music.play();
@@ -431,7 +432,7 @@ volumeBtn.addEventListener('click', () => {
   </script>
 
   <footer data-template-id="footer-section" class="canva-footer w-full px-5 py-9 text-center" style="background: rgb(255, 250, 240);">
-   <p data-template-id="footer-message" class="canva-text serif" style="font-size: 20px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal;">We can’t wait to celebrate with you. ♥ Nidhi &amp; Jay</p>
+   <p data-template-id="footer-message" class="canva-text serif" style="font-size: 12px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal;">We can’t wait to celebrate with you. ♥ Nidhi &amp; Jay</p>
   </footer>
   <script>
     (() => {
