@@ -147,7 +147,34 @@
       --arch-opacity: 1;
       position: relative;
       isolation: isolate;
-      background: #fffaf0 !important;
+      overflow: hidden;
+      background: transparent !important;
+    }
+
+    .page-background {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0;
+      transition: opacity 1.2s ease-in;
+    }
+
+    .page-background.is-loaded {
+      opacity: 1;
+    }
+
+    .page-content {
+      transition: opacity .7s ease;
+    }
+
+    body:not(.page-ready) .page-content {
+      opacity: 0 !important;
+      visibility: hidden;
     }
 
     #home::before {
@@ -166,11 +193,23 @@
     #home > #invitation {
       position: relative;
       z-index: 1;
+      width: 100%;
+      padding-left: clamp(1.5rem, 8vw, 3.5rem) !important;
+      padding-right: clamp(1.5rem, 8vw, 3.5rem) !important;
+    }
+
+    #home > #invitation .canva-text {
+      overflow-wrap: break-word;
+      text-wrap: pretty;
     }
 
     @media (max-width: 640px) {
       #home {
         --arch-size: 100% 100%;
+      }
+
+      .page-background {
+        object-fit: fill;
       }
     }
   </style>
@@ -183,15 +222,15 @@
 
   </div>
 
-  <header class="sticky top-0 z-30 w-full border-b border-[#e9dccc] bg-[#fffaf0ed] backdrop-blur-md">
+  <header class="page-content sticky top-0 z-30 w-full border-b border-[#e9dccc] bg-[#fffaf0ed] backdrop-blur-md">
    <nav aria-label="Main navigation" class="max-w-6xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-3"><a href="#home" data-template-id="nav-brand" class="canva-link serif font-semibold whitespace-nowrap" style="font-size: 20px; color: rgb(166, 85, 75); font-weight: 700; font-style: normal;">N &amp; J</a>
     <div class="flex flex-wrap justify-end gap-x-3 gap-y-1 sm:gap-x-6"><a href="#invitation" data-template-id="nav-invitation" class="canva-link" style="font-size: 12px; font-weight: 600; color: rgb(72, 58, 51); font-style: normal;">Invitation</a> <a href="#ceremonies" data-template-id="nav-ceremonies" class="canva-link" style="font-size: 12px; font-weight: 600; color: rgb(72, 58, 51); font-style: normal;">Ceremonies</a><a href="#rsvp" data-template-id="nav-rsvp" class="canva-link" style="font-size: 12px; font-weight: 600; color: rgb(72, 58, 51); font-style: normal;">RSVP</a>
     </div>
    </nav>
   </header>
   <main class="w-full">
-    <img src="bg.png" style="position:absolute;z-index: -998; opacity: 1; width: 100%; height: 140%; "/>
-   <section id="home" data-template-id="hero-section" class="canva-section w-full px-5 pt-12 pb-16 sm:pt-16 sm:pb-24 text-center" style="background: rgb(255, 250, 240); z-index: -999; opacity: 1;">
+  <section id="home" data-template-id="hero-section" class="page-content canva-section w-full px-5 pt-12 pb-16 sm:pt-16 sm:pb-24 text-center" style="background: rgb(255, 250, 240); z-index: -999; opacity: 1;">
+    <img class="page-background" src="bg.png" alt="" aria-hidden="true">
     
     <div id="invitation" class="invitation-shell max-w-3xl mx-auto px-2 sm:px-14" style="padding-top: 40px;">
      <!-- <svg class="mx-auto mb-5 w-28 h-32 sm:w-36 sm:h-40 text-[#b2634e]" viewBox="0 0 160 180" fill="none" role="img" aria-label="Graceful line illustration of Lord Ganesha">
@@ -226,7 +265,7 @@
      <p data-template-id="closing-names" class="canva-text serif mt-2 hero-reveal" style="font-size: 17px; color: rgb(72, 58, 51); font-weight: 400; font-style: normal;">Sneha &amp; Krisha</p>
     </div>
    </section>
-   <section id="ceremonies" data-template-id="ceremonies-section" class="canva-section w-full px-5 py-16 sm:py-20" style="background: rgb(166, 54, 54);">
+  <section id="ceremonies" data-template-id="ceremonies-section" class="page-content canva-section w-full px-5 py-16 sm:py-20" style="background: rgb(166, 54, 54);">
     <div class="max-w-6xl mx-auto">
      <div class="text-center mb-12">
       <h2 data-template-id="ceremonies-title" class="canva-text serif hero-reveal" style="font-size: 24px; color: rgb(246, 233, 210); font-weight: 400; font-style: normal;">The Wedding Ceremonies</h2>
@@ -342,7 +381,7 @@
      <p data-template-id="photo-subtitle" class="canva-text serif mb-9" style="font-size: 16px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal;">Nidhi &amp; Jay</p><img data-template-id="couple-photo" class="canva-image couple-photo rounded-2xl mx-auto" loading="lazy" src="IMG_3766.png" alt="Nidhi and Jay in traditional wedding attire">
     </div>
    </section> -->
-   <section id="rsvp" data-template-id="rsvp-section" class="canva-section w-full px-5 py-16 sm:py-20" style="background: rgb(255, 250, 240);">
+  <section id="rsvp" data-template-id="rsvp-section" class="page-content canva-section w-full px-5 py-16 sm:py-20" style="background: rgb(255, 250, 240);">
     <div data-template-id="rsvp-panel" class="canva-panel max-w-xl mx-auto rounded-2xl border border-[#e8d8c3] p-7 sm:p-11 shadow-sm" style="background: rgb(255, 253, 248);">
      <p data-template-id="rsvp-kicker" class="canva-text uppercase tracking-[.2em] text-center mb-2" style="font-size: 12px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal;">We hope to see you there</p>
      <h2 data-template-id="rsvp-title" class="canva-text serif text-center mb-3" style="font-size: 24px; color: rgb(166, 85, 75); font-weight: 400; font-style: normal;">Kindly RSVP</h2>
@@ -382,13 +421,34 @@
 const music = document.getElementById('bg-music');
 const isSafari = /Safari/i.test(navigator.userAgent) && !/Chrome|CriOS|Android/i.test(navigator.userAgent);
 volumeBtn.classList.toggle('muted', !isSafari);
+
+const pageBackground = document.querySelector('.page-background');
+const revealPageBackground = () => {
+  pageBackground.classList.add('is-loaded');
+  document.body.classList.add('page-ready');
+};
+if (pageBackground.complete) {
+  revealPageBackground();
+} else {
+  pageBackground.addEventListener('load', revealPageBackground, { once: true });
+}
+
+const startMusic = () => {
+  music.play().then(() => volumeBtn.classList.remove('muted')).catch(() => {});
+};
+
+startMusic();
+document.addEventListener('pointerdown', event => {
+  if (!event.target.closest('#volume-toggle')) startMusic();
+}, { once: true });
+document.addEventListener('keydown', startMusic, { once: true });
+
 volumeBtn.addEventListener('click', () => {
   if (music.paused) {
-    music.play();
-    volumeBtn.classList.remove('muted'); // Shows the sound waves
+    startMusic();
   } else {
     music.pause();
-    volumeBtn.classList.add('muted');    // Shows the "X" mute lines
+    volumeBtn.classList.add('muted');
   }
 });
 </script>
