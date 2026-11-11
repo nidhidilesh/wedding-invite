@@ -29,6 +29,8 @@
     @media(max-width:640px){.invitation-shell:before,.invitation-shell:after{display:none}.petal{opacity:.35}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.petal-layer{display:none}}
     @font-face{font-family:'Halimun';src:url('./halimun/Halimun.ttf') format('woff2');font-display:swap;font-style:normal;font-weight:400}
+        @font-face{font-family:'New-Icon-Script';src:url('./new-icon-script/New-Icon-Script.otf') format('woff2');font-display:swap;font-style:normal;font-weight:400}
+
 .script-names{font-family:'Halimun',cursive;font-size:clamp(56px,12vw,10px);text-shadow:0 2px #fff9,0 5px 18px #bd965b30}
     /* Base Button Styling */
 .volume-btn {
@@ -213,9 +215,108 @@
       }
     }
   </style>
+  <style>
+    body.envelope-locked { overflow: hidden; }
+    .envelope-cover {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      overflow: hidden;
+      background: #f5ead5;
+      cursor: pointer;
+      transition: opacity 1.35s ease;
+    }
+    .envelope-panel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      overflow: hidden;
+      transition: transform 1.45s cubic-bezier(.72, 0, .24, 1);
+      will-change: transform;
+    }
+    .envelope-panel img {
+      position: absolute;
+      top: 0;
+      width: 200%;
+      max-width: none;
+      height: 100%;
+      object-fit: cover;
+    }
+    .envelope-panel-left { left: 0; }
+    .envelope-panel-left img { left: 0; }
+    .envelope-panel-right { right: 0; }
+    .envelope-panel-right img { right: 0; }
+    .envelope-seal {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      transition: transform 1.35s cubic-bezier(.62, 0, .3, 1), opacity .8s ease;
+      will-change: transform, opacity;
+    }
+    .envelope-title {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: 26%;
+      transform: translateX(-50%);
+      color: #713e38;
+      font: 500 clamp(24px, 8vw, 42px) "New-Icon-Script", serif;
+      text-align: center;
+      text-shadow: 0 1px 12px #fffaf0a8;
+      white-space: nowrap;
+      pointer-events: none;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    .envelope-open {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      bottom: 12vh;
+      transform: translateX(-50%);
+      padding: .4rem;
+      border: 0;
+      background: transparent;
+      color: #713e38;
+      font: 600 20px "DM Sans", sans-serif;
+      cursor: pointer;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+    .envelope-open:hover { color: #a34f48; }
+    .envelope-cover.is-opening {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .envelope-cover.is-opening .envelope-panel-left { transform: translateX(-101%); }
+    .envelope-cover.is-opening .envelope-panel-right { transform: translateX(101%); }
+    .envelope-cover.is-opening .envelope-seal {
+      transform: translateX(-110vw) rotate(-12deg);
+      opacity: 0;
+    }
+    .envelope-cover.is-opening .envelope-title,
+    .envelope-cover.is-opening .envelope-open {
+      opacity: 0;
+      transform: translate(-50%, 8px);
+      pointer-events: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .envelope-cover, .envelope-panel, .envelope-seal, .envelope-title, .envelope-open { transition-duration: 13s; }
+    }
+  </style>
 
 </head>
- <body data-template-id="__page-root" class="paper w-full" style="background: rgb(255, 250, 240); color: rgb(72, 58, 51);">
+ <body data-template-id="__page-root" class="paper w-full envelope-locked" style="background: rgb(255, 250, 240); color: rgb(72, 58, 51);">
+  <div id="envelope-cover" class="envelope-cover" role="dialog" aria-modal="true" aria-label="Wedding invitation cover">
+   <div class="envelope-panel envelope-panel-left" aria-hidden="true"><img src="background.png" alt=""></div>
+   <div class="envelope-panel envelope-panel-right" aria-hidden="true"><img src="background.png" alt=""></div>
+   <img class="envelope-seal" src="stamp.png" alt="">
+    <p class="envelope-title">Wedding Invitation</p>
+   <button id="envelope-open" class="envelope-open" type="button">Click anywhere to open</button>
+  </div>
   <div class="petal-layer" aria-hidden="true">
    <span class="petal" style="--x:5%;--s:12px;--d:15s;--delay:-3s;--drift:33px"></span> <span class="petal" style="--x:16%;--s:15px;--d:19s;--delay:-11s;--drift:-42px"></span> <span class="petal" style="--x:28%;--s:11px;--d:17s;--delay:-6s;--drift:51px"></span> <span class="petal" style="--x:40%;--s:14px;--d:21s;--delay:-15s;--drift:-36px"></span> <span class="petal" style="--x:52%;--s:12px;--d:18s;--delay:-9s;--drift:47px"></span> <span class="petal" style="--x:64%;--s:15px;--d:22s;--delay:-2s;--drift:-53px"></span> <span class="petal" style="--x:76%;--s:11px;--d:16s;--delay:-12s;--drift:-31px"></span> <span class="petal" style="--x:88%;--s:14px;--d:20s;--delay:-7s;--drift:38px"></span> <span class="petal" style="--x:96%;--s:10px;--d:23s;--delay:-17s;--drift:-45px"></span>
       <span class="petal" style="--x:11%;--s:13px;--d:10s;--delay:-7s;--drift:37px"></span> <span class="petal" style="--x:21%;--s:13px;--d:18s;--delay:-8s;--drift:-47px"></span> <span class="petal" style="--x:34%;--s:12px;--d:12s;--delay:-4s;--drift:62px"></span> <span class="petal" style="--x:46%;--s:13px;--d:15s;--delay:-2s;--drift:-50px"></span> <span class="petal" style="--x:58%;--s:14px;--d:20s;--delay:-2s;--drift:77px"></span> <span class="petal" style="--x:70%;--s:15px;--d:20s;--delay:-3s;--drift:-43px"></span> <span class="petal" style="--x:80%;--s:12px;--d:11s;--delay:-4s;--drift:-21px"></span> <span class="petal" style="--x:92%;--s:12px;--d:23s;--delay:-1s;--drift:58px"></span> <span class="petal" style="--x:100%;--s:10px;--d:12s;--delay:-17s;--drift:-85px"></span>
@@ -398,11 +499,11 @@
     </div>
    </section>
   </main>
-  <audio id="bg-music" autoplay>
+  <audio id="bg-music">
   <source src="Super final audio.mp3" type="audio/mp3">
 </audio>
 
-<button id="volume-toggle" class="volume-btn" aria-label="Toggle Volume">
+<button id="volume-toggle" class="volume-btn muted" type="button" aria-label="Play music" title="Play music">
   <!-- Sound On Icon -->
   <svg class="icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -419,8 +520,19 @@
 <script>
   const volumeBtn = document.getElementById('volume-toggle');
 const music = document.getElementById('bg-music');
-const isSafari = /Safari/i.test(navigator.userAgent) && !/Chrome|CriOS|Android/i.test(navigator.userAgent);
-volumeBtn.classList.toggle('muted', !isSafari);
+const envelopeCover = document.getElementById('envelope-cover');
+
+  const syncMusicButton = () => {
+    const isPlaying = !music.paused;
+    const label = isPlaying ? 'Pause music' : 'Play music';
+    volumeBtn.classList.toggle('muted', !isPlaying);
+    volumeBtn.setAttribute('aria-label', label);
+    volumeBtn.title = label;
+  };
+  music.addEventListener('play', syncMusicButton);
+  music.addEventListener('pause', syncMusicButton);
+  music.addEventListener('ended', syncMusicButton);
+  syncMusicButton();
 
 const pageBackground = document.querySelector('.page-background');
 const revealPageBackground = () => {
@@ -434,21 +546,26 @@ if (pageBackground.complete) {
 }
 
 const startMusic = () => {
-  music.play().then(() => volumeBtn.classList.remove('muted')).catch(() => {});
+  music.play().catch(syncMusicButton);
 };
 
-startMusic();
-document.addEventListener('pointerdown', event => {
-  if (!event.target.closest('#volume-toggle')) startMusic();
-}, { once: true });
-document.addEventListener('keydown', startMusic, { once: true });
+envelopeCover.addEventListener('click', () => {
+  if (envelopeCover.classList.contains('is-opening')) return;
+  startMusic();
+  envelopeCover.classList.add('is-opening');
+  const duration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 250 : 1500;
+  window.setTimeout(() => {
+    envelopeCover.remove();
+    document.body.classList.remove('envelope-locked');
+    document.dispatchEvent(new Event('invitation:opened'));
+  }, duration);
+});
 
 volumeBtn.addEventListener('click', () => {
   if (music.paused) {
     startMusic();
   } else {
     music.pause();
-    volumeBtn.classList.add('muted');
   }
 });
 </script>
@@ -460,34 +577,41 @@ volumeBtn.addEventListener('click', () => {
       const invitation = hero && hero.querySelector('#invitation');
       if (!hero || !invitation) return;
 
-      // Animate every invitation text item in page order, plus the opening image.
-      const items = [...invitation.querySelectorAll('.canva-text, .ganesh')];
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const revealInvitation = () => {
+        const items = [...invitation.querySelectorAll('.canva-text, .ganesh')];
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (reduceMotion || !('IntersectionObserver' in window)) {
-        items.forEach(item => item.classList.add('is-visible'));
-        return;
-      }
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+          items.forEach(item => item.classList.add('is-visible'));
+          return;
+        }
 
-      const stagger = parseFloat(
-        getComputedStyle(hero).getPropertyValue('--reveal-stagger')
-      ) || 180;
+        const stagger = parseFloat(
+          getComputedStyle(hero).getPropertyValue('--reveal-stagger')
+        ) || 180;
 
-      items.forEach((item, index) => {
-        item.classList.add('hero-reveal');
-        item.style.transitionDelay = `${index * stagger}ms`;
-      });
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+        items.forEach((item, index) => {
+          item.classList.add('hero-reveal');
+          item.style.transitionDelay = `${index * stagger}ms`;
         });
-      }, { threshold: 0.01, rootMargin: '0px 0px -2% 0px' });
 
-      items.forEach(item => observer.observe(item));
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.01, rootMargin: '0px 0px -2% 0px' });
+
+        items.forEach(item => observer.observe(item));
+      };
+
+      if (document.getElementById('envelope-cover')) {
+        document.addEventListener('invitation:opened', revealInvitation, { once: true });
+      } else {
+        revealInvitation();
+      }
     })();
   </script>
 
